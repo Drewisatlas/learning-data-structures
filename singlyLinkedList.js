@@ -114,8 +114,18 @@ class SinglyLinkedList {
     //return the node at that specific index.
     return current;
   }
+  set (index, value) {
+    //use the get function to find a specific node.
+    let node = this.get(index);
+    //if node is found, set the value of that node to the value passed into the function and return true
+    if (node) {
+      node.value = value
+      return true;
+    }
+    //if node is not found, return false
+    return false;
+  }
 
-  
 }
 
 let list = new SinglyLinkedList()
