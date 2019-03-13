@@ -79,7 +79,7 @@ class SinglyLinkedList {
       return current;
     }
   }
-  unshift(val) { //accepts a value
+  unshift(val) { //accepts a value and adds it to the front of the list
     // creates a new node using the value passed to the function
     let newNode = new Node(val);
     //if there is no head set the head and the tail to be the newely created node
@@ -98,6 +98,24 @@ class SinglyLinkedList {
     return this;
     }
   }
+
+  get (index) {
+    //if the index is less than zero or greater than or equal to the length of the list return null
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+    let i = 0;
+    let current = this.head;
+    //Loop through the list until you reach the index,
+    while (i !== index) {
+      current = this.next;
+      i++;
+    }
+    //return the node at that specific index.
+    return current;
+  }
+
+  
 }
 
 let list = new SinglyLinkedList()
