@@ -79,12 +79,29 @@ class SinglyLinkedList {
       return current;
     }
   }
+  unshift(val) { //accepts a value
+    // creates a new node using the value passed to the function
+    let newNode = new Node(val);
+    //if there is no head set the head and the tail to be the newely created node
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      //else set the newly created node's next to be the current head property on the list
+      newNode.next = this.head;
+      // set the head property on the list to be the new node
+      this.head = newNode;
+    }
+    // increment the length of the list by 1
+    this.length ++;
+    // return the linked list
+    return this;
+    }
+  }
 }
 
 let list = new SinglyLinkedList()
 list.push("Hello")
 list.push("World")
 list.push("!")
-console.log(list)
-list.shift()
 console.log(list)
