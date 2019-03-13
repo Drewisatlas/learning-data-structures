@@ -154,6 +154,30 @@ class SinglyLinkedList {
     //ideally it should only return true and false
   }
 
+  remove(index){
+    // if the index is less than zero or greater than the length, return undefined.
+    if (index < 0 || index > this.length){
+      return undefined;
+    }
+    // if the index is the same as the length -1. pop
+    if (index === this.length-1) {
+      return this.pop();
+    }
+    // if the index is 0. shift
+    if (index === 0) {
+      return this.shift();
+    }
+    //Else use the get method to access the node at index -1
+    let frontNode = this.get(index-1);
+    let removedNode = this.get(index);
+    //set the next property on that node to be the nextof the soon to be removed node.
+    frontNode.next = removedNode.next;
+        //decrement the length
+    this.length --;
+    //return the value of the node removed
+    return removedNode;
+  }
+
 }
 
 let list = new SinglyLinkedList()
