@@ -61,7 +61,24 @@ class SinglyLinkedList {
       return current;
     }
   }
-  
+  shift() { //should
+    // if there are no nodes, return undefined.
+    if (this.length === 0) {
+      return undefined;
+    } else {
+      // store the current head in a variable
+      let current = this.head;
+      // Set the head property to be the current head's next property
+      this.head = current.next;
+      // decrement the length by 1
+      this.length--;
+      if (this.length === 0) {
+        this.tail = null;
+      }
+      // return the value of the node removed
+      return current;
+    }
+  }
 }
 
 let list = new SinglyLinkedList()
@@ -69,5 +86,5 @@ list.push("Hello")
 list.push("World")
 list.push("!")
 console.log(list)
-list.pop()
+list.shift()
 console.log(list)
