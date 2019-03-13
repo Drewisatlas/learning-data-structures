@@ -126,6 +126,34 @@ class SinglyLinkedList {
     return false;
   }
 
+  insert (index, value) {
+    //if index is < 0 or greater than the length, return false
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+    //if the index is the same as the length, push a new node to the end of the list
+    if (index === this.length) {
+      return !!this.push(value); //!! coerces to boolean
+    }
+    //if the index is 0, unshift a new node to the start of the list
+    if (index === 0) {
+      return !!this.unshift(value); // !! coerces to boolean
+    }
+    //Otherwise, using the get method, access the node at the index -1
+    let frontNode = this.get(index - 1);
+    let newNode = new Node(value);
+    let backNode = frontNode.next;
+    //set the next property on the node to be the new node
+    frontNode.next = newNode;
+      //set the next property on the new node to be the previous next
+    newNode.next = backNode;
+    //increment the length
+    this.length ++;
+    //return true
+    return true;
+    //ideally it should only return true and false
+  }
+
 }
 
 let list = new SinglyLinkedList()
