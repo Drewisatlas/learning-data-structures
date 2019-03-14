@@ -177,11 +177,17 @@ class SinglyLinkedList {
     //return the value of the node removed
     return removedNode;
   }
+  reverse () { //Traverse and reverse
+    this.tail = this.head;
+    let next = this.tail.next;
+    let previous;
+    let node
 
+  }
 }
 
 let list = new SinglyLinkedList()
 list.push("Hello")
 list.push("World")
 list.push("!")
-console.log(list)
+console.log(list.reverse())
