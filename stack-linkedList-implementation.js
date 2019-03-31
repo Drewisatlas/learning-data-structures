@@ -18,6 +18,19 @@ class Stack {
     }
     return this.size++;
   }
+
+  pop () {
+    if (this.size === 0) {
+      return null;
+    }
+    let temp = this.first;
+    if (this.size === 1) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    this.size --;
+    return this.first;
+  }
 }
 
 //create a node class that will represent elements/nodes in the stack
