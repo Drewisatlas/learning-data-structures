@@ -39,8 +39,3 @@
      this.next = null;
    }
  }
-
- let q = new Queue()
- q.enqueue(12);
- q.enqueue(13);
- console.log(q);
