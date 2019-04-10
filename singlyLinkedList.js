@@ -96,7 +96,6 @@ class SinglyLinkedList {
     this.length ++;
     // return the linked list
     return this;
-    }
   }
 
   get (index) {
